@@ -1,0 +1,61 @@
+Title: Fixing the "No Data / NoneType" Error in get_weather_data()  
+Date: 1 October 2025  
+Tool: ChatGPT  
+
+---
+Me:
+I’m getting an error saying “TypeError: 'NoneType' object is not subscriptable” when trying to access `data["current_condition"][0]["temp_C"]`.  
+Why is this happening and how can I fix it?
+
+AI:
+Explained that this error occurs when the API request fails or returns invalid data, causing `response.json()` to return `None`.  
+Suggested checking the status code and using a `try/except` block to handle connection issues.  
+Also recommended adding a friendly error message when the request fails.  
+
+---
+Me:
+So I should wrap the code in try/except and check for `response.ok` before trying to access JSON keys?  
+
+AI:
+Exactly.  
+Provided an updated version of `get_weather_data()` that looks like this:
+
+```python
+def get_weather_data(location, forecast_days=3):
+    url = f"https://wttr.in/{location}?format=j1"
+    try:
+        response = requests.get(url, timeout=5)
+        response.raise_for_status()
+        data = response.json()
+        result = {
+            "temperature": data["current_condition"][0]["temp_C"],
+            "humidity": data["current_condition"][0]["humidity"],
+            "forecast": [
+                {
+                    "date": d["date"],
+                    "max_temp": d["maxtempC"],
+                    "min_temp": d["mintempC"],
+                    "chance_of_rain": d["hourly"][0]["chanceofrain"]
+                }
+                for d in data["weather"][:forecast_days]
+            ]
+        }
+        return result
+    except requests.exceptions.RequestException:
+        return {"error": "Failed to fetch weather data. Please check the location or try again later."}
+
+Me:
+After using your version, it works!
+When I enter an invalid city name, it now shows a friendly message instead of crashing.
+That makes sense — I was missing proper error handling for failed API requests.
+
+AI:
+Great!
+This is a key step toward building robust applications.
+You’ve improved both user experience and code quality by catching runtime errors gracefully.
+
+Reflection:
+This experience taught me that debugging isn’t just about fixing syntax — it’s about anticipating potential failures.
+By prompting the AI to explain why the error occurred, I learned to validate API responses and improve program reliability.
+Now my function is safer, and I can confidently handle unexpected inputs.
+This shows intentional prompting because I didn’t just ask for a fix — I asked for the reason behind the error and applied the concept to my own code.

@@ -1,0 +1,60 @@
+Title: Integrating All Components in Main Application Logic
+Date: 3 October 2025
+Tool: ChatGPT
+
+---
+Me:
+I think I’ve finished each function—get_weather_data, visualisations, NLP, and UI—but I’m not sure how to tie them together.
+The template says “Main Application Logic – Tie everything together here.” 
+What’s the best way to combine everything so it runs smoothly as one program?
+
+AI:
+Explained that the main logic should control the program’s flow: call the UI, process input, fetch data, and show results.
+Suggested creating a main_app() loop that:
+  1. Displays the main menu with pyinputplus.
+  2. Handles “Check Weather” by calling the NLP and weather functions.
+  3. Handles “View Visualisations” by calling the plotting functions.
+  4. Exits gracefully when selected.
+
+---
+Me:
+I tried that, but I wasn’t sure how to separate defining the functions from executing them.
+Should I keep everything inside main_app() or run it separately?
+
+AI:
+Clarified that each function should stay modular—defined above—and main_app() only orchestrates them.
+Recommended adding a simple line at the bottom:
+    if __name__ == "__main__":
+        main_app()
+so the app runs cleanly when executed.
+
+---
+Me:
+I followed your structure and it works!
+Now the program runs interactively:
+- It fetches data correctly.
+- The NLP functions interpret questions.
+- The visualisations open only when chosen.
+- The menu loops until “Exit.”
+Everything feels cohesive.
+
+AI:
+That’s a great milestone. 
+You’ve integrated all subsystems into a working application—just like a real software project.
+Reminded you to test each path (invalid input, multiple runs, exiting) to confirm robustness.
+
+---
+Me:
+I tested each option and confirmed no errors.
+I also added a “Goodbye” message when exiting—it makes the program feel more polished.
+
+AI:
+Excellent touch.
+Those small usability details make your app professional and complete.
+
+---
+Reflection:
+This conversation helped me connect all modules into one functional system.
+By prompting the AI about structure rather than syntax, I learned how to design a main control loop that coordinates separate functions.
+It demonstrates intentional prompting because I used the AI to understand the architecture of a complete program, not just write code lines.
+The result was a cohesive, user-friendly WeatherWise application that meets all project requirements.

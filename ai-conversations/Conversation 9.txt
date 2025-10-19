@@ -1,0 +1,44 @@
+Title: Adding Advanced Features – Caching, Multi-City Comparison, and Weather Summary
+Date: 19 October 2025
+Tool: ChatGPT
+
+Me:
+I want to make my WeatherWise project more advanced so I can get higher marks.
+How can I add new features without breaking my existing structure?
+I’m thinking of adding caching, comparing two cities, and generating short summary sentences.
+
+AI:
+Explained that all three can be added modularly without rewriting the existing functions:
+
+Caching: Add a dictionary above get_weather_data() to store recent results and check before making API calls.
+
+Multi-city comparison: Add a new function compare_cities_weather() that plots both cities’ max temperatures on one chart.
+
+Summary generation: Expand generate_weather_response() with conditional sentences based on temperature and rain chance.
+
+Me:
+I implemented those changes — caching prints “(cached)” when I run the same city again,
+the multi-city graph compares Perth and Sydney correctly,
+and the summary adds natural text like “It’s likely to rain today, so take an umbrella.”
+Should I also mention these in my reflection or testing section?
+
+AI:
+Yes.
+Document them in your reflection (for design thinking) and show them in the testing section to prove they work.
+These advanced features demonstrate deeper system thinking, optimization, and creative AI use.
+
+Me:
+After testing, everything works together smoothly.
+Now the app feels more complete and professional.
+
+AI:
+Excellent — this elevates your project beyond the baseline rubric.
+Adding caching and comparative visualisation shows that you understand scalability and data presentation.
+The weather summary adds a conversational element that improves user experience.
+
+Reflection:
+This conversation shows intentional prompting because I explored how to extend my system,
+not just fix errors.
+By asking strategic “how” and “why” questions,
+I applied AI guidance to design three advanced features that improved performance, interactivity, and realism.
+These upgrades demonstrate higher-level understanding and problem-solving — qualities that distinguish an HD+ project.

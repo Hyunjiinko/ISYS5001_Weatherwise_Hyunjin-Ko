@@ -1,0 +1,42 @@
+Title: Handling Multi-Word Locations and Invalid Input Errors
+Date: 2 October 2025
+Tool: ChatGPT
+
+---
+Me:
+When I ask for “New York,” my function only reads “New” and returns wrong data.
+Also, if I type a random word like “Asdfgh,” it breaks with a KeyError.
+How can I fix both of these issues?
+
+AI:
+Explained that the issue with “New York” comes from splitting text incorrectly and trimming too much after “in.”
+Suggested adjusting the parsing logic to preserve multi-word city names:
+    - Use question.split(" in ", 1) instead of question.split(" in ").
+    - Clean punctuation with regex but don’t split by spaces again.
+For invalid inputs, recommended adding a fallback inside get_weather_data() to catch errors and return {"error": "Invalid location"}.
+
+---
+Me:
+I updated parse_weather_question() to use split(" in ", 1) and it now keeps “New York” correctly.
+Then I added a try/except block inside get_weather_data() for RequestException and KeyError.
+Now, if I type a nonsense word, it shows “Failed to fetch weather data. Please check the location.”
+
+AI:
+Excellent. That covers both usability and stability.
+You’ve made your NLP function smarter and your program more fault-tolerant.
+This approach also improves user experience because it avoids crashes and provides clear feedback.
+
+---
+Me:
+I tested other multi-word cities like “Los Angeles” and “Rio de Janeiro” — they all work now.
+It even handles lowercase or uppercase versions properly.
+
+AI:
+Perfect. That shows your code is robust against real-world variations.
+Consider keeping these improvements documented as part of your error-handling strategy.
+
+---
+Reflection:
+This interaction taught me that text parsing and error handling must work together.
+By intentionally prompting about the cause of the errors, I learned how to refine regex logic, preserve full location names, and provide meaningful error messages.
+This conversation shows intentional prompting because I didn’t just fix the bug — I investigated why it occurred and made the function resilient for both valid and invalid inputs.

@@ -1,0 +1,52 @@
+Title: Improving Visualisations — Handling “No Rain Expected” Case  
+Date: 1 October 2025  
+Tool: ChatGPT  
+
+---
+Me:
+I created the precipitation visualisation using matplotlib, but sometimes when there’s no rain data, the chart just shows an empty bar plot.  
+It looks like the program failed, even though it didn’t.  
+How can I make it clearer for the user that there’s simply no rain expected?
+
+AI:
+Good observation.  
+Explained that when all precipitation values are zero, matplotlib still draws an empty chart, which can confuse users.  
+Suggested checking if all values in the precipitation list are zero, and if so, displaying a simple message like “No rain expected.”  
+Provided a small code modification example:
+
+```python
+if all(p == 0 for p in precipitation):
+    ax.text(0.5, 0.5, "No rain expected",
+            ha='center', va='center', fontsize=12, color='green',
+            transform=ax.transAxes)
+
+
+Me:
+That makes sense. I added your code, and now the chart displays “No rain expected” in green text whenever the data has no rainfall. It looks much cleaner and communicates information better.
+
+AI:
+Exactly — that’s good user experience design. You’ve made your visualisation more meaningful by accounting for edge cases. This kind of improvement shows attention to both technical correctness and usability.
+
+Me:
+I also realised this technique could apply to other charts — for example, I can check for missing or incomplete data and provide feedback instead of showing broken visuals.
+
+AI:
+That’s a professional insight. You’re thinking like a developer who considers how real users interpret results.
+
+Reflection:
+This interaction helped me improve data visualisation clarity. I intentionally prompted the AI to identify why my output looked empty and how to communicate “no rain” meaningfully. By implementing a conditional check, I made the app feel more polished and user-friendly. This shows intentional prompting because I used the AI to critique my design and make a targeted improvement based on feedback.
+
+Me:
+That makes sense. I added your code, and now the chart displays “No rain expected” in green text whenever the data has no rainfall. It looks much cleaner and communicates information better.
+
+AI:
+Exactly — that’s good user experience design. You’ve made your visualisation more meaningful by accounting for edge cases. This kind of improvement shows attention to both technical correctness and usability.
+
+Me:
+I also realised this technique could apply to other charts — for example, I can check for missing or incomplete data and provide feedback instead of showing broken visuals.
+
+AI:
+That’s a professional insight. You’re thinking like a developer who considers how real users interpret results.
+
+Reflection:
+This interaction helped me improve data visualisation clarity. I intentionally prompted the AI to identify why my output looked empty and how to communicate “no rain” meaningfully. By implementing a conditional check, I made the app feel more polished and user-friendly. This shows intentional prompting because I used the AI to critique my design and make a targeted improvement based on feedback.

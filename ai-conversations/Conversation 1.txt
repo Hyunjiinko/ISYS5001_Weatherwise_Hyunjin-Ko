@@ -1,0 +1,37 @@
+Title: Choosing the Right Weather API (wttr.in vs OpenWeatherMap)
+Date: 30 September 2025
+Tool: ChatGPT
+
+---
+Me:
+What’s the difference between using wttr.in and OpenWeatherMap API for my WeatherWise project?  
+Which one is easier for me as a beginner, and do I need an API key?
+
+AI:
+Explained that wttr.in requires no API key and is ideal for simple JSON weather retrieval,  
+while OpenWeatherMap needs registration, API key management, and more complex parsing.  
+Suggested using wttr.in to focus on Python logic instead of API authentication.
+
+---
+Me:
+So if I use wttr.in, do I still need to include the API key section from the template?  
+It had a line that asked me to connect to Ollama and enter an API key.
+
+AI:
+No. The Ollama key is for the optional “hands-on-ai” extension only.  
+You can safely remove or comment out that block because it’s unrelated to weather data.  
+wttr.in already provides public access via HTTPS with no key needed.
+
+---
+Me:
+Got it. So I’ll simplify my setup and focus on data retrieval first.
+
+AI:
+Good plan. That will keep your environment clean and prevent API-key errors.  
+You can always add a more advanced API later if you want extra credit.
+
+---
+Reflection:
+This conversation helped me understand the differences between free public APIs and authenticated APIs.  
+I intentionally chose wttr.in to reduce setup complexity and focus on Python programming skills.  
+Removing the unnecessary Ollama section also kept my notebook stable and avoided metadata errors.

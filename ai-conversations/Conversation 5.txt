@@ -1,0 +1,49 @@
+Title: Building and Refining Natural Language Processing Functions
+Date: 1 October 2025
+Tool: ChatGPT
+
+---
+Me:
+I want to create functions for natural language processing in my WeatherWise project.
+The assignment says I need parse_weather_question() and generate_weather_response().
+How should I design them so that they understand basic user questions like “What’s the weather in Perth today?”
+
+AI:
+Suggested starting simple: detect location names, keywords like “today” or “tomorrow,” and attributes such as “temperature” or “rain.”
+Recommended returning a dictionary with those details so the response function can use it.
+Provided an initial structure with lowercasing, keyword detection, and basic cleaning after “in.”
+
+---
+Me:
+The code works but sometimes returns “New” instead of “New York.”
+Also, the response only says “temperature” instead of real values.
+How can I fix that?
+
+AI:
+Explained that you need to clean the location more carefully — remove punctuation but keep multiple words.
+Suggested using split(" in ") and a re.sub pattern to remove words like “today” or “tomorrow” while keeping multi-word cities.
+Also pointed out that generate_weather_response() needs to actually pull values from your weather data dictionary instead of returning placeholders.
+
+---
+Me:
+I updated the code using your suggestion and now multi-word cities like “New York” work.
+But when I test with “What’s the chance of rain in Sydney tomorrow?” the output still gives only text like “chance_of_rain.”
+
+AI:
+Explained that this happens because you didn’t connect the parsed attribute to the actual data yet.
+Showed how to use a conditional structure to display either temperature or chance of rain from the forecast dictionary, and to pick the correct day using your “today/tomorrow” logic.
+
+---
+Me:
+After linking those together, it now prints full sentences like “Looks like Sydney tomorrow has a 20% chance of rain. Better bring an umbrella!”
+It feels much more conversational.
+
+AI:
+Perfect — that shows you combined both parsing and response logic correctly.
+Encouraged testing with different question styles to see how robust the parsing is.
+
+---
+Reflection:
+This conversation helped me design and refine two key functions that make my app feel intelligent.
+By intentionally prompting the AI to explain both logic and reasoning, I learned how to connect natural-language inputs to structured data.
+This demonstrates intentional prompting because I didn’t just copy code — I asked clarifying questions, tested different cases, and iteratively improved accuracy and user experience.

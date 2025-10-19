@@ -1,0 +1,49 @@
+Title: User Interface Design – Switching from ipywidgets to pyinputplus
+Date: 2 October 2025
+Tool: ChatGPT
+
+---
+Me:
+I’m trying to use ipywidgets to make an interactive menu for my WeatherWise project, but it keeps giving me “invalid notebook metadata” errors when I save or reopen in Google Colab.
+Is there a better way to handle user input without causing these issues?
+
+AI:
+Explained that ipywidgets sometimes stores UI state data in notebook metadata, which Colab doesn’t always handle well.
+Suggested using a simple text-based interface with pyinputplus instead.
+Described how pyinputplus offers numbered menus, input validation, and is more compatible with Colab and JupyterHub.
+
+---
+Me:
+So if I use pyinputplus, I can still have a menu like “Check Weather / View Visualisation / Exit” without widgets?
+
+AI:
+Exactly.
+Showed an example using:
+    choice = pyip.inputMenu(["Check Weather","View Visualisation","Exit"], numbered=True)
+to replicate the same functionality through the console.
+
+---
+Me:
+I replaced my ipywidgets code with your pyinputplus version, and it runs perfectly.
+No more errors when saving or re-opening the notebook.
+It also feels simpler to test since it doesn’t depend on browser rendering.
+
+AI:
+Great call.
+That’s why many developers prefer text-based menus in environments where notebook metadata can break.
+It keeps your UI portable and stable across systems.
+
+---
+Me:
+So I’ll keep pyinputplus as my final UI tool—it’s consistent and user-friendly enough for this project.
+
+AI:
+Good decision.
+It demonstrates thoughtful tool selection and shows that you can balance advanced features with reliability.
+
+---
+Reflection:
+This conversation shows intentional prompting in system design.
+I used AI to compare two interface methods, evaluated real runtime issues, and chose the one that best fits my environment.
+By switching to pyinputplus, I avoided metadata corruption errors and ensured the app would work reliably for assessment.
+This demonstrates analytical thinking and evidence-based decision-making rather than just copying code.

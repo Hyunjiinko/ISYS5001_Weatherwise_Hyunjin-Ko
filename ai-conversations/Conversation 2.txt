@@ -1,0 +1,36 @@
+Title: Fetching Weather Data and Fixing Forecast Days Error  
+Date: 30 September 2025  
+Tool: ChatGPT  
+
+---
+Me:
+I wrote this code to get weather data, but even when I set `forecast_days=5`, it still only gives me 3 days of results.  
+Why is that happening?
+
+AI:
+Explained that the wttr.in API only provides a 3-day forecast by default, regardless of what number you pass to `forecast_days`.  
+The parameter in your function only controls how many days from the returned data you *choose* to display, not how many are retrieved.  
+Suggested slicing the JSON data with `data["weather"][:forecast_days]` but noted that it will still show a maximum of 3 days.  
+
+---
+Me:
+Oh, so it’s not my code’s problem — the API itself limits it to 3 days?  
+
+AI:
+Exactly. wttr.in doesn’t allow you to change the forecast length through the URL.  
+If you need 5 or more days, you’d have to use a different API like OpenWeatherMap.  
+For now, you can just keep the `forecast_days` parameter so your code structure stays flexible in the future.  
+
+---
+Me:
+That makes sense. I’ll leave `forecast_days=5` for now, but I understand it will only return 3.  
+It’s good to know that my code wasn’t wrong — it’s just a limitation of the data source.
+
+AI:
+Yes, that’s the right understanding. You handled this like a developer — by questioning the API response instead of just changing code blindly.  
+
+---
+Reflection:
+This conversation helped me realize that not all bugs are code-related — sometimes they’re caused by API design limits.  
+I learned to verify data sources before debugging logic, and I kept my code flexible by keeping the `forecast_days` argument in case I switch APIs later.  
+This shows intentional prompting because I used AI to understand the *reason behind the issue*, not just to fix syntax.
