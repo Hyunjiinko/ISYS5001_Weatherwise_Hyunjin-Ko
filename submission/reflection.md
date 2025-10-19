@@ -1,7 +1,7 @@
 # Project Reflection – WeatherWise
 
 ## AI Tools Used  
-For this project, I mainly used **ChatGPT** to help me when I got stuck or wasn’t sure how to approach a problem.  
+For this project, I mainly used ChatGPT to help me when I got stuck or wasn’t sure how to approach a problem.  
 It guided me through debugging and gave me explanations that helped me understand the logic behind Python functions, APIs, and visualisation.  
 Instead of just copying answers, I tried to ask why things worked the way they did.  
 For example, when deciding between using wttr.in or OpenWeatherMap, I discussed the pros and cons with ChatGPT and ended up choosing wttr.in because it was simpler and didn’t need an API key.  
@@ -10,7 +10,7 @@ This way, I could focus more on learning the actual Python logic.
 ---
 
 ## Prompting Techniques  
-I used a few **intentional prompting** strategies that I learned in this unit:  
+I used a few intentional prompting strategies that I learned in this unit:  
 - Restating my problem before asking for help, so I could think clearly about what I was actually struggling with  
 - Asking for reasoning or pseudocode first before asking for code  
 - Testing edge cases like invalid cities or missing data to make sure my code didn’t break  
@@ -24,7 +24,7 @@ These techniques helped me use AI in a more independent way, where I still did m
 I’m really proud of how the final app turned out.  
 Everything connects smoothly—from getting the weather data to showing visualisations and responding in natural language.  
 I especially liked improving the precipitation chart by adding a “No rain expected” message, because it makes the result clearer for users.  
-Switching to a **menu system with pyinputplus** also made the app easier to use and more reliable.  
+Switching to a menu system with pyinputplus also made the app easier to use and more reliable.  
 Adding caching and comparing two cities was also a highlight since it made the project feel more complete and practical.
 
 ---
