@@ -7,6 +7,4 @@ To improve performance and user experience, I implemented **caching**, **multi-c
 AI tools such as ChatGPT supported my learning by helping me reason through design choices, test edge cases, and refine code structure without providing direct answers.  
 This project brought together everything I learned about APIs, user interface design, and intentional AI prompting, resulting in a fully functional and easy-to-use weather advisory system.
 
----
 
-**Word Count:** ~140

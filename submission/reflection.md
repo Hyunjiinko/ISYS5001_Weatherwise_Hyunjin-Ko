@@ -44,6 +44,4 @@ More than that, I learned how to use AI tools thoughtfully, not just for quick f
 I realised that coding isn’t just about making things work, but also about designing something people can use and understand.  
 Working with AI helped me learn faster, but the final design and logic still came from me, and that’s what I’m most proud of.
 
----
 
-**Word Count:** ~440
